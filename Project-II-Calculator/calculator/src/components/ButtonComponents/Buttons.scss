@@ -1,0 +1,13 @@
+.Buttons {
+  display: flex;
+  max-width: 456px;
+  width: 100%;
+
+  &-main {
+    width: 75%;
+  }
+
+  &-compute {
+    width: 25%;
+  }
+}
