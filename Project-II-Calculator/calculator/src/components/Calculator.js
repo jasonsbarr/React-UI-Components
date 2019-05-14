@@ -46,9 +46,9 @@ class Calculator extends Component {
         ? prev * current
         : action === "divide"
         ? prev / current
-        : 0;
+        : current;
     this.setState({
-      prev: current,
+      prev: val,
       current: val,
       action: actionArg,
       clearNext: true,
