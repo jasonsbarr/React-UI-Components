@@ -1,13 +1,47 @@
-.Buttons {
+.buttons {
   display: flex;
-  max-width: 456px;
-  width: 100%;
 
   &-main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
     width: 75%;
   }
 
   &-compute {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
     width: 25%;
+  }
+
+  .btn {
+    background: #f3f3f3;
+    border: 1px solid #979797;
+    cursor: pointer;
+    font-size: 3rem;
+    height: 95px;
+    line-height: 95px;
+    text-align: center;
+    width: 114px;
+
+    &:hover {
+      background: darken(#f3f3f3, 10%);
+    }
+
+    &-action {
+      background: #a0011e;
+      color: #ffffff;
+      font-size: 5rem;
+
+      &:hover {
+        background: darken(#a0011e, 5%);
+      }
+    }
+
+    &-fw {
+      width: 100%;
+    }
   }
 }

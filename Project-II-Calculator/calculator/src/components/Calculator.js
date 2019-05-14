@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CalculatorDisplay from "./DisplayComponents/CalculatorDisplay";
 import Buttons from "./ButtonComponents/Buttons";
+import "./Calculator.scss";
 
 class Calculator extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Calculator extends Component {
 
   render() {
     return (
-      <div>
+      <div className="calculator">
         <CalculatorDisplay current={this.state.current} />
         <Buttons />
       </div>

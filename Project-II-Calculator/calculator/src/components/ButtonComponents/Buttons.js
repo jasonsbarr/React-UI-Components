@@ -5,7 +5,7 @@ import "./Buttons.scss";
 
 const Buttons = props => {
   return (
-    <div className="Buttons">
+    <div className="buttons">
       <MainButtons />
       <ComputeButtons />
     </div>
