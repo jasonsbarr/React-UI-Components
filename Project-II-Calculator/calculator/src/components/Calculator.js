@@ -16,34 +16,42 @@ class Calculator extends Component {
     };
   }
 
-  handleClear = () => this.setState({ current: 0, prev: 0 });
+  handleClear = () =>
+    this.setState({
+      current: 0,
+      prev: 0,
+      action: "",
+      clearNext: false,
+    });
 
   handlePressNumber = n => {
     const current =
-      this.state.current !== 0
+      this.state.current !== 0 && !this.state.clearNext
         ? parseInt(this.state.current.toString() + n)
         : parseInt(n);
-    this.setState({ current });
+    this.setState({
+      current,
+      clearNext: false,
+    });
   };
 
   handleAction = actionArg => {
     const { current, prev, action } = this.state;
     const val =
-      action !== ""
-        ? action === "add"
-          ? prev + current
-          : action === "subtract"
-          ? prev - current
-          : action === "multiply"
-          ? prev * current
-          : action === "divide"
-          ? prev / current
-          : 0
-        : 0; // Shouldn't ever reach this
+      action === "add"
+        ? prev + current
+        : action === "subtract"
+        ? prev - current
+        : action === "multiply"
+        ? prev * current
+        : action === "divide"
+        ? prev / current
+        : 0;
     this.setState({
       prev: current,
       current: val,
       action: actionArg,
+      clearNext: true,
     });
   };
 
